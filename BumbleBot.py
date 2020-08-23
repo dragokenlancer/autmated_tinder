@@ -37,6 +37,7 @@ class BumbleBot():
     def paywall_close(self):
         close_paywall = bot.driver.find_element_by_xpath('//*[@id="main"]/div/div[1]/div[1]/div/div[2]/div/div[2]')
         close_paywall.click()
+        #refresh the page to prevent a endless loop
         self.driver.get('http://bumble.com/get-started')
         sleep(2)
     def auto_swipe(self):
